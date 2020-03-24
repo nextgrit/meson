@@ -160,6 +160,7 @@ class UserComboOption(UserOption[str]):
         self.set_value(value)
 
     def validate_value(self, value):
+        print(value)
         if value not in self.choices:
             optionsstring = ', '.join(['"%s"' % (item,) for item in self.choices])
             raise MesonException('Value "%s" for combo option is not one of the choices. Possible choices are: %s.' % (value, optionsstring))
