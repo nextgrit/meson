@@ -75,6 +75,7 @@ class UserStringOption(UserOption[str]):
         self.set_value(value)
 
     def validate_value(self, value):
+        print(value)
         if not isinstance(value, str):
             raise MesonException('Value "%s" for string option is not a string.' % str(value))
         return value
